@@ -641,7 +641,8 @@ a:hover {
 }
 
 .announcement-button:hover {
-  background-color: #363738;
+  color: #fff;
+  text-decoration: underline;
 }
 
 .repository-block {
