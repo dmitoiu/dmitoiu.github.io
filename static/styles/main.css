@@ -1,6 +1,65 @@
 :root {
-  --backgound: #141414;
+  --background: #141414;
   --header: #222222;
+  --primary-accent: #333333;
+  --text-accent: #ffffff;
+  --widgets-accent: #e1e1e1;
+  --border-accent: #3d3d3d;
+  --box-block-accent: #222222;
+  --box-border-accent: #363738;
+  --box-shadow-accent: #222222;
+  --sub-content-link-hover: #363738;
+  --arrow-down-background: #e1e1e1;
+  --close-widget: #c8c8c8;
+  --rating-accent: #222222;
+  --white: #d7dedc;
+  --black: #15181e;
+  --accent: #ff9f1c;
+  --border-color: transparent;
+  --black-variant: #23262c; /* #222631 */
+  --accent-variant: #b56f0d;
+  --visited: #01e4f8;
+  --gray: #d7dedc3b;
+  --red: #f34213;
+  --yellow: #f5b700;
+  --green: #3e8914;
+  --star-fill-base64: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJmaWxsOiAjZmZkNjE3OyBwb3NpdGlvbjpyZWxhdGl2ZTsgcmlnaHQ6IDA7IiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIzMiI+DQogICAgICAgICAgICAgICAgPHBhdGggZmlsbD0iI2ZmZDYxNyIgZD0iTTUuMDksMjIuNzFsMS44My03LjkyTDAuODMsOS40Nmw4LjAzLTAuN0wxMiwxLjI5bDMuMTQsNy40N2w4LjAzLDAuN2wtNi4wOSw1LjMybDEuODMsNy45MkwxMiwxOC41IEw1LjA5LDIyLjcxeiIvPg0KPC9zdmc+");
+  --star-outline-base64: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0icmF0aW5nLXN0YXItc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJmaWxsOiAjZmZmOyBwb3NpdGlvbjpyZWxhdGl2ZTsgcmlnaHQ6IDA7IiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIzMiI+DQogICAgICAgIDxwYXRoIGQ9Ik03LjM0LDE5LjU4TDEyLDE2Ljc1bDQuNjYsMi44N2wtMS4yMi01LjM3bDQuMS0zLjU4bC01LjQtMC40OEwxMiw1LjEybC0yLjE0LDUuMDNsLTUuNCwwLjQ4bDQuMSwzLjYyDQogICAgICAgIEw3LjM0LDE5LjU4eiBNNS4wOSwyMi43MWwxLjgzLTcuOTJMMC44Myw5LjQ2bDguMDMtMC43TDEyLDEuMjlsMy4xNCw3LjQ3bDguMDMsMC43bC02LjA5LDUuMzNsMS44Myw3LjkyTDEyLDE4LjVMNS4wOSwyMi43MXoiLz4NCjwvc3ZnPg==");
+  --arrow-down-base64: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjZThlYWVkIj48cGF0aCBkPSJNNDgwLTM0NCAyNDAtNTg0bDU2LTU2IDE4NCAxODQgMTg0LTE4NCA1NiA1Ni0yNDAgMjQwWiIvPjwvc3ZnPg==");
+  --dark-mode-base64: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJmaWxsOiAjZmZmOyBwYWRkaW5nLWxlZnQ6IDRweDsgcG9zaXRpb246cmVsYXRpdmU7IHJpZ2h0OiA1cHg7IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIC05NjAgOTYwIDk2MCIgd2lkdGg9IjI0Ij4NCiAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00ODAtMTIwcS0xNTAgMC0yNTUtMTA1VDEyMC00ODBxMC0xNTAgMTA1LTI1NXQyNTUtMTA1cTE0IDAgMjcuNSAxdDI2LjUgM3EtNDEgMjktNjUuNQ0KICAgICAgICAgICAgICAgICAgNzUuNVQ0NDQtNjYwcTAgOTAgNjMgMTUzdDE1MyA2M3E1NSAwIDEwMS0yNC41dDc1LTY1LjVxMiAxMyAzIDI2LjV0MSAyNy41cTAgMTUwLTEwNQ0KICAgICAgICAgICAgICAgICAgMjU1VDQ4MC0xMjBabTAtODBxODggMCAxNTgtNDguNVQ3NDAtMzc1cS0yMCA1LTQwIDh0LTQwIDNxLTEyMyAwLTIwOS41LTg2LjVUMzY0LTY2MHEwLTIwDQogICAgICAgICAgICAgICAgICAzLTQwdDgtNDBxLTc4IDMyLTEyNi41IDEwMlQyMDAtNDgwcTAgMTE2IDgyIDE5OHQxOTggODJabS0xMC0yNzBaIi8+DQo8L3N2Zz4=");
+  --light-mode-base64: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJmaWxsOiAjZmZmOyBwYWRkaW5nLWxlZnQ6IDRweDsgcG9zaXRpb246cmVsYXRpdmU7IHJpZ2h0OiA1cHg7IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIC05NjAgOTYwIDk2MCIgd2lkdGg9IjI0Ij4NCiAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00ODAtMzYwcTUwIDAgODUtMzV0MzUtODVxMC01MC0zNS04NXQtODUtMzVxLTUwIDAtODUgMzV0LTM1IDg1cTAgNTAgMzUgODV0ODUgMzVabTAgODBxLTgzDQogICAgICAgICAgICAgICAgICAwLTE0MS41LTU4LjVUMjgwLTQ4MHEwLTgzIDU4LjUtMTQxLjVUNDgwLTY4MHE4MyAwIDE0MS41IDU4LjVUNjgwLTQ4MHEwIDgzLTU4LjUNCiAgICAgICAgICAgICAgICAgIDE0MS41VDQ4MC0yODBaTTIwMC00NDBINDB2LTgwaDE2MHY4MFptNzIwIDBINzYwdi04MGgxNjB2ODBaTTQ0MC03NjB2LTE2MGg4MHYxNjBoLTgwWm0wDQogICAgICAgICAgICAgICAgICA3MjB2LTE2MGg4MHYxNjBoLTgwWk0yNTYtNjUwbC0xMDEtOTcgNTctNTkgOTYgMTAwLTUyIDU2Wm00OTIgNDk2LTk3LTEwMSA1My01NSAxMDEgOTctNTcNCiAgICAgICAgICAgICAgICAgIDU5Wm0tOTgtNTUwIDk3LTEwMSA1OSA1Ny0xMDAgOTYtNTYtNTJaTTE1NC0yMTJsMTAxLTk3IDU1IDUzLTk3IDEwMS01OS01N1ptMzI2LTI2OFoiLz4NCjwvc3ZnPg== ");
+  --body-font-family: "Verdana Bold", Verdana, Tahoma, "Tahoma Bold", "Trebuchet MS", Sans-Serif, Georgia, Arial;
+
+  /* Filtru pentru culoare scroll pagina web */
+  color-scheme: dark;
+
+  /* Filtru pentru a colora icon-urile negre in culoarea selectata https://angel-rs.github.io/css-color-filter-generator/ */
+  --color-filter: brightness(0) saturate(100%) invert(64%) sepia(78%)
+  saturate(647%) hue-rotate(341deg) brightness(99%) contrast(105%);
+
+  /* Filtru pentru a colora icon-urile in alb*/
+  --color-filter-variant: brightness(0) saturate(100%) invert(98%) sepia(0%)
+  saturate(6%) hue-rotate(206deg) brightness(103%) contrast(104%);
+
+  /* Filtru pentru a colora icon-urile de token */
+  --color-filter-accent: brightness(0) saturate(100%) invert(85%) sepia(30%)
+  saturate(6670%) hue-rotate(133deg) brightness(101%) contrast(99%);
+}
+
+.light-theme {
+  --background: #e1e1e1;
+  --header: #f4f4f4;
+  --primary-accent: #dddddd;
+  --text-accent: #000000;
+  --widgets-accent: #141414;
+  --border-accent: #3d3d3d;
+  --box-block-accent: #e1e1e1;
+  --box-border-accent: #363738;
+  --box-shadow-accent: #222222;
+  --sub-content-link-hover: #f4f4f4;
+  --arrow-down-background: #141414;
+  --close-widget: #c8c8c8;
+  --rating-accent: #f4f4f4;
   --box-shadow: #363738;
   --white: #d7dedc;
   --black: #15181e;
@@ -15,8 +74,10 @@
   --yellow: #f5b700;
   --green: #3e8914;
   --star-fill-base64: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJmaWxsOiAjZmZkNjE3OyBwb3NpdGlvbjpyZWxhdGl2ZTsgcmlnaHQ6IDA7IiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIzMiI+DQogICAgICAgICAgICAgICAgPHBhdGggZmlsbD0iI2ZmZDYxNyIgZD0iTTUuMDksMjIuNzFsMS44My03LjkyTDAuODMsOS40Nmw4LjAzLTAuN0wxMiwxLjI5bDMuMTQsNy40N2w4LjAzLDAuN2wtNi4wOSw1LjMybDEuODMsNy45MkwxMiwxOC41IEw1LjA5LDIyLjcxeiIvPg0KPC9zdmc+");
-  --star-outline-base64: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0icmF0aW5nLXN0YXItc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJmaWxsOiAjZmZmOyBwb3NpdGlvbjpyZWxhdGl2ZTsgcmlnaHQ6IDA7IiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIzMiI+DQogICAgICAgIDxwYXRoIGQ9Ik03LjM0LDE5LjU4TDEyLDE2Ljc1bDQuNjYsMi44N2wtMS4yMi01LjM3bDQuMS0zLjU4bC01LjQtMC40OEwxMiw1LjEybC0yLjE0LDUuMDNsLTUuNCwwLjQ4bDQuMSwzLjYyDQogICAgICAgIEw3LjM0LDE5LjU4eiBNNS4wOSwyMi43MWwxLjgzLTcuOTJMMC44Myw5LjQ2bDguMDMtMC43TDEyLDEuMjlsMy4xNCw3LjQ3bDguMDMsMC43bC02LjA5LDUuMzNsMS44Myw3LjkyTDEyLDE4LjVMNS4wOSwyMi43MXoiLz4NCjwvc3ZnPg==");
-  --arrow-down-base64: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjZThlYWVkIj48cGF0aCBkPSJNNDgwLTM0NCAyNDAtNTg0bDU2LTU2IDE4NCAxODQgMTg0LTE4NCA1NiA1Ni0yNDAgMjQwWiIvPjwvc3ZnPg==");
+  --star-outline-base64: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0icmF0aW5nLXN0YXItc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJmaWxsOiAjMTQxNDE0OyBwb3NpdGlvbjpyZWxhdGl2ZTsgcmlnaHQ6IDA7IiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIzMiI+DQogICAgICAgIDxwYXRoIGQ9Ik03LjM0LDE5LjU4TDEyLDE2Ljc1bDQuNjYsMi44N2wtMS4yMi01LjM3bDQuMS0zLjU4bC01LjQtMC40OEwxMiw1LjEybC0yLjE0LDUuMDNsLTUuNCwwLjQ4bDQuMSwzLjYyDQogICAgICAgIEw3LjM0LDE5LjU4eiBNNS4wOSwyMi43MWwxLjgzLTcuOTJMMC44Myw5LjQ2bDguMDMtMC43TDEyLDEuMjlsMy4xNCw3LjQ3bDguMDMsMC43bC02LjA5LDUuMzNsMS44Myw3LjkyTDEyLDE4LjVMNS4wOSwyMi43MXoiLz4NCjwvc3ZnPg==");
+  --arrow-down-base64: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjMTQxNDE0Ij48cGF0aCBkPSJNNDgwLTM0NCAyNDAtNTg0bDU2LTU2IDE4NCAxODQgMTg0LTE4NCA1NiA1Ni0yNDAgMjQwWiIvPjwvc3ZnPg==");
+  --dark-mode-base64: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjMTQxNDE0Ij48cGF0aCBkPSJNNDgwLTEyMHEtMTUwIDAtMjU1LTEwNVQxMjAtNDgwcTAtMTUwIDEwNS0yNTV0MjU1LTEwNXExNCAwIDI3LjUgMXQyNi41IDNxLTQxIDI5LTY1LjUgNzUuNVQ0NDQtNjYwcTAgOTAgNjMgMTUzdDE1MyA2M3E1NSAwIDEwMS0yNC41dDc1LTY1LjVxMiAxMyAzIDI2LjV0MSAyNy41cTAgMTUwLTEwNSAyNTVUNDgwLTEyMFptMC04MHE4OCAwIDE1OC00OC41VDc0MC0zNzVxLTIwIDUtNDAgOHQtNDAgM3EtMTIzIDAtMjA5LjUtODYuNVQzNjQtNjYwcTAtMjAgMy00MHQ4LTQwcS03OCAzMi0xMjYuNSAxMDJUMjAwLTQ4MHEwIDExNiA4MiAxOTh0MTk4IDgyWm0tMTAtMjcwWiIvPjwvc3ZnPg==");
+  --light-mode-base64: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJmaWxsOiAjMTQxNDE0OyBwYWRkaW5nLWxlZnQ6IDRweDsgcG9zaXRpb246cmVsYXRpdmU7IHJpZ2h0OiA1cHg7IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIC05NjAgOTYwIDk2MCIgd2lkdGg9IjI0Ij4NCiAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00ODAtMzYwcTUwIDAgODUtMzV0MzUtODVxMC01MC0zNS04NXQtODUtMzVxLTUwIDAtODUgMzV0LTM1IDg1cTAgNTAgMzUgODV0ODUgMzVabTAgODBxLTgzDQogICAgICAgICAgICAgICAgICAwLTE0MS41LTU4LjVUMjgwLTQ4MHEwLTgzIDU4LjUtMTQxLjVUNDgwLTY4MHE4MyAwIDE0MS41IDU4LjVUNjgwLTQ4MHEwIDgzLTU4LjUNCiAgICAgICAgICAgICAgICAgIDE0MS41VDQ4MC0yODBaTTIwMC00NDBINDB2LTgwaDE2MHY4MFptNzIwIDBINzYwdi04MGgxNjB2ODBaTTQ0MC03NjB2LTE2MGg4MHYxNjBoLTgwWm0wDQogICAgICAgICAgICAgICAgICA3MjB2LTE2MGg4MHYxNjBoLTgwWk0yNTYtNjUwbC0xMDEtOTcgNTctNTkgOTYgMTAwLTUyIDU2Wm00OTIgNDk2LTk3LTEwMSA1My01NSAxMDEgOTctNTcNCiAgICAgICAgICAgICAgICAgIDU5Wm0tOTgtNTUwIDk3LTEwMSA1OSA1Ny0xMDAgOTYtNTYtNTJaTTE1NC0yMTJsMTAxLTk3IDU1IDUzLTk3IDEwMS01OS01N1ptMzI2LTI2OFoiLz4NCjwvc3ZnPg==");
   --body-font-family: "Verdana Bold", Verdana, Tahoma, "Tahoma Bold", "Trebuchet MS", Sans-Serif, Georgia, Arial;
 
   /* Filtru pentru culoare scroll pagina web */
@@ -62,7 +123,7 @@
 html, body {
   font-family: var(--body-font-family);
   font-size: 8pt;
-  background: var(--backgound);
+  background: var(--background);
   margin: 0;
   padding: 0;
   height: 100%;
@@ -77,9 +138,9 @@ html, body {
 .main-banner {
   width: 100%;
   min-width: 1050px;
-  background-color: #333333;
-  border-bottom: 1px solid #363738;
-  color: #fff;
+  background-color: var(--primary-accent);
+  border-bottom: 1px solid var(--box-border-accent);
+  color: var(--text-accent);
   font-family: Segoe UI, serif;
   font-size: 12px;
   font-weight: 400;
@@ -88,7 +149,7 @@ html, body {
 
 .sub-banner {
   width: 100%;
-  background-color: #141414;
+  background: var(--background);
   min-width: 1014px;
   display: flex;
   flex-direction: row;
@@ -114,7 +175,7 @@ html, body {
 }
 
 .sub-banner-content > label:after {
-  background-color: #fff;
+  background-color: var(--arrow-down-background);
   background-position: 50% 50%;
   content: "";
   display: inline-block;
@@ -138,13 +199,13 @@ html, body {
 }
 
 .sub-banner-content > label > span {
-  color: #fff;
+  color: var(--text-accent);
   position: relative;
   bottom: 2px;
 }
 
 .sub-banner-content > label > span > em {
-  color: #fff;
+  color: var(--text-accent);
   cursor: pointer;
   display: inline-block;
   font-style: normal;
@@ -162,7 +223,7 @@ html, body {
 }
 
 .main-banner-authentication > a > label {
-  color: #fff;
+  color: var(--text-accent);
   display: block;
   font-size: 12px;
   font-weight: bold;
@@ -174,13 +235,13 @@ html, body {
 }
 
 .main-banner-authentication > a > label > span {
-  color: #fff;
+  color: var(--text-accent);
   position: relative;
   bottom: 2px;
 }
 
 .main-banner-authentication > a > label > span > em {
-  color: #fff;
+  color: var(--text-accent);
   cursor: pointer;
   display: inline-block;
   font-style: normal;
@@ -193,8 +254,8 @@ html, body {
   display: none;
 }
 
-.main-banner .sub-banner-content label em:hover{
-  color: #fff;
+.main-banner .sub-banner-content label em:hover {
+  color: var(--text-accent);
   text-decoration: underline;
 }
 
@@ -228,6 +289,10 @@ html, body {
   font-weight: bold;
   line-height: 16px;
   cursor: default;
+}
+
+.main-banner-phone-call svg {
+  fill: var(--text-accent) !important;
 }
 
 .main-banner-phone-call > label {
@@ -288,6 +353,10 @@ html, body {
   vertical-align: top;
 }
 
+.banner-details svg {
+  fill: var(--widgets-accent) !important;
+}
+
 .banner-domain-container {
   display: flex !important;
   flex-direction: row;
@@ -332,7 +401,7 @@ html, body {
 
 .banner-details > .banner-close-details {
   background-color: transparent;
-  color: #c8c8c8;
+  color: var(--close-widget);
   display: inline-block;
   font-size: 2.2em;
   font-weight: 900;
@@ -354,12 +423,12 @@ html, body {
 .main-header{
   width: 100%;
   height: 165px;
-  background: #222222;
+  background: var(--header);
   min-width: 1050px;
 }
 
 .main-header a:hover {
-  color: #FFFFFF;
+  color: var(--text-accent);
   text-decoration:none;
 }
 
@@ -393,7 +462,15 @@ html, body {
 }
 
 .sub-header-content-link:hover {
-  background-color: #363738;
+  background-color: var(--sub-content-link-hover);
+}
+
+.sub-header-content-link font {
+  color: var(--text-accent);
+}
+
+.sub-header-content-link svg {
+  fill: var(--text-accent) !important;
 }
 
 .shop-cart-button {
@@ -436,14 +513,14 @@ html, body {
   border-radius: 4px;
   display: flex;
   align-items: center;
-  border: 1px solid #363738;
+  border: 1px solid var(--box-border-accent);
   box-shadow: 0 0 0 1px #222222;
   transition: background-color 150ms ease-in, border-color 150ms ease-in;
 }
 
 .filter-button:hover {
-  background-color: #363738;
-  border-color: #363738;
+  background-color: var(--box-border-accent);
+  border-color: var(--box-border-accent);
 }
 
 .deployment-badge {
@@ -453,7 +530,7 @@ html, body {
   border-radius: 4px;
   display: flex;
   align-items: center;
-  border: 1px solid #363738;
+  border: 1px solid var(--box-border-accent);
   box-shadow: 0 0 0 1px #222222;
   transition: background-color 150ms ease-in, border-color 150ms ease-in;
 }
@@ -494,10 +571,10 @@ html, body {
   margin: 0 0;
   font-family:Helvetica,Arial,Verdana,sans-serif;
   /* CSS Nav */
-  background: #333333;
-  border: 1px solid #3d3d3d;
+  background: var(--primary-accent);
+  border: 1px solid var(--border-accent);
   border-radius: 8px;
-  box-shadow: 0 0 5px 1px #363738;
+  box-shadow: 0 0 5px 1px var(--box-border-accent);
 }
 
 .navigation-list-container {
@@ -543,7 +620,7 @@ a:hover {
   display: inline;
   position: relative;
   float: left;
-  color: #f1f1f1;
+  color: var(--text-accent);
   left: 8px;
   bottom: 12px;
   pointer-events: none;
@@ -559,10 +636,10 @@ a:hover {
   color: #000000;
   float:right;
   font-size:10px;
-  background: var(--backgound);
-  border: 1px solid #3d3d3d;
+  background: var(--background);
+  border: 1px solid var(--border-accent);
   border-radius: 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .support-bar {
@@ -571,16 +648,16 @@ a:hover {
   margin: 0 0;
   position: relative;
   top: 8px;
-  font-family:Helvetica,Arial,Verdana,sans-serif;
-  border: 1px solid #3d3d3d;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  border: 1px solid var(--border-accent);
   border-radius: 8px;
-  box-shadow: 0 0 0 1px #363738;
-  background: #141414;
-  color: #FFFFFF;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
+  background: var(--background);
+  color: var(--text-accent);
 }
 
 .support-bar-container a {
-  color: #FFFFFF;
+  color: var(--text-accent);
 }
 
 .support-bar-content {
@@ -640,13 +717,17 @@ a:hover {
   transition: background-color 150ms ease-in;
 }
 
+.announcement-button font {
+  color: var(--text-accent);
+}
+
 .announcement-button:hover {
-  color: #fff;
+  color: var(--text-accent);
   text-decoration: underline;
 }
 
 .repository-block {
-  border-bottom: #3d3d3d 1px solid;
+  border-bottom: var(--border-accent) 1px solid;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: left;
@@ -655,6 +736,10 @@ a:hover {
 .repository-header {
   display: flex;
   flex-direction: row;
+}
+
+.repository-header svg {
+  fill: var(--text-accent) !important;
 }
 
 .repository-title {
@@ -675,10 +760,10 @@ a:hover {
   width:655px;
   height:30px;
   float:left;
-  background: #222222;
-  border: 1px solid #3d3d3d;
+  background: var(--box-block-accent);
+  border: 1px solid var(--border-accent);
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .n-block-header h4 {
@@ -687,7 +772,7 @@ a:hover {
   font-family: 'Trebuchet MS', Verdana, serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -701,10 +786,10 @@ a:hover {
   min-height: 445px;
   padding: 20px 0 10px 0;
   position: relative;
-  background: #222222;
-  border: 1px solid #3d3d3d;
+  background: var(--box-block-accent);
+  border: 1px solid var(--border-accent);
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .n-block-inner-content {
@@ -715,12 +800,12 @@ a:hover {
 
 .n-block-bold-content {
   font-weight: normal;
-  color: #fff;
+  color: var(--text-accent);
   min-height: 445px;
-  background: #141414;
+  background: var(--background);
   border:1px solid #141414;
   border-radius: 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
   text-align: justify;
   padding: 10px;
   cursor: default;
@@ -730,10 +815,14 @@ a:hover {
   margin-top:5px;
   padding-left: 10px;
   padding-bottom: 10px;
-  color: #fff;
+  color: var(--text-accent);
   position:relative;
   top:10px;
   cursor: default;
+}
+
+.n-block-footer svg {
+  fill: var(--text-accent) !important;
 }
 
 .s-block {
@@ -749,10 +838,10 @@ a:hover {
   width:305px;
   height:30px;
   float:left;
-  background: #222222;
-  border: 1px solid #3d3d3d;
+  background: var(--box-block-accent);
+  border: 1px solid var(--border-accent);
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .s-block-header h4 {
@@ -761,7 +850,7 @@ a:hover {
   font-family: 'Trebuchet MS', Verdana, serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -775,10 +864,10 @@ a:hover {
   min-height: 445px;
   padding: 20px 0 10px 0;
   position: relative;
-  background: #222222;
-  border: 1px solid #3d3d3d;
+  background: var(--box-block-accent);
+  border: 1px solid var(--border-accent);
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .s-block-inner-content {
@@ -789,12 +878,12 @@ a:hover {
 
 .s-block-bold-content {
   font-weight: normal;
-  color: #fff;
+  color: var(--text-accent);
   min-height: 385px;
-  background: #141414;
+  background: var(--background);
   border:1px solid #141414;
   border-radius: 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
   text-align: justify;
   padding: 10px;
   cursor: default;
@@ -804,7 +893,7 @@ a:hover {
   margin-top:5px;
   padding-left: 10px;
   padding-bottom: 10px;
-  color: #fff;
+  color: var(--text-accent);
   position:relative;
   top:10px;
   cursor: default;
@@ -815,8 +904,8 @@ a:hover {
   margin: 10px 0 0 0;
   display: flex;
   flex-direction: column;
-  border-top: 2px solid #3d3d3d;
-  border-bottom: 0 solid #3d3d3d;
+  border-top: 2px solid var(--border-accent);
+  border-bottom: 0 solid var(--border-accent);
 }
 
 .services-block-header {
@@ -829,7 +918,7 @@ a:hover {
 }
 
 .services-block-header p {
-  color: #fff;
+  color: var(--text-accent);
   text-shadow: 0 0 0 #3d3d3d;
   font-size: 12px;
   padding: 0;
@@ -837,7 +926,7 @@ a:hover {
 }
 
 .services-block-footer p {
-  color: #fff;
+  color: var(--text-accent);
   text-shadow: 0 0 0 #3d3d3d;
   font-size: 12px;
   padding: 0;
@@ -901,9 +990,9 @@ a:hover {
   height:30px;
   float:left;
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .s-block-card-header h4 {
@@ -912,7 +1001,7 @@ a:hover {
   font-family: 'Trebuchet MS', Verdana, serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -927,9 +1016,9 @@ a:hover {
   padding: 20px 0 10px 0;
   position: relative;
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .s-block-card-inner-content {
@@ -941,12 +1030,12 @@ a:hover {
 
 .s-block-card-bold-content {
   font-weight: normal;
-  color: #fff;
+  color: var(--text-accent);
   min-height: 75px;
   background: #141414;
   border:1px solid #141414;
   border-radius: 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
   text-align: justify;
   padding: 10px;
   cursor: default;
@@ -957,8 +1046,8 @@ a:hover {
   margin: 10px 0 0 0;
   display: flex;
   flex-direction: column;
-  border-top: 2px solid #3d3d3d;
-  border-bottom: 0 solid #3d3d3d;
+  border-top: 2px solid var(--border-accent);
+  border-bottom: 0 solid var(--border-accent);
 }
 
 .pricing-block-header {
@@ -971,7 +1060,7 @@ a:hover {
 }
 
 .pricing-block-header p {
-  color: #fff;
+  color: var(--text-accent);
   text-shadow: 0 0 0 #3d3d3d;
   font-size: 12px;
   padding: 0;
@@ -1024,8 +1113,8 @@ a:hover {
   margin: 10px 0 0 0;
   display: flex;
   flex-direction: column;
-  border-top: 2px solid #3d3d3d;
-  border-bottom: 2px solid #3d3d3d;
+  border-top: 2px solid var(--border-accent);
+  border-bottom: 2px solid var(--border-accent);
 }
 
 .business-block-header {
@@ -1037,7 +1126,7 @@ a:hover {
 }
 
 .business-block-header p {
-  color: #fff;
+  color: var(--text-accent);
   text-shadow: 0 0 0 #3d3d3d;
   font-size: 12px;
   padding: 0;
@@ -1045,7 +1134,7 @@ a:hover {
 }
 
 .business-block-footer p {
-  color: #fff;
+  color: var(--text-accent);
   text-shadow: 0 0 0 #3d3d3d;
   font-size: 12px;
   padding: 0;
@@ -1109,9 +1198,9 @@ a:hover {
   height:30px;
   float:left;
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .b-block-card-header h4 {
@@ -1120,7 +1209,7 @@ a:hover {
   font-family: 'Trebuchet MS', Verdana, serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -1135,9 +1224,9 @@ a:hover {
   padding: 20px 0 10px 0;
   position: relative;
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .b-block-card-inner-content {
@@ -1149,12 +1238,12 @@ a:hover {
 
 .b-block-card-bold-content {
   font-weight: normal;
-  color: #fff;
+  color: var(--text-accent);
   min-height: 75px;
   background: #141414;
   border:1px solid #141414;
   border-radius: 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
   text-align: justify;
   padding: 10px;
   cursor: default;
@@ -1165,7 +1254,7 @@ a:hover {
 }
 
 .card-block-title-link {
-  color: #fff;
+  color: var(--text-accent);
 }
 
 .card-block-title-link:hover {
@@ -1177,7 +1266,7 @@ a:hover {
   margin: 0 0 10px 0;
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid #3d3d3d;
+  border-bottom: 2px solid var(--border-accent);
 }
 
 .discover-block-header {
@@ -1218,9 +1307,9 @@ a:hover {
   height:30px;
   float:left;
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .d-block-card-header h4 {
@@ -1229,7 +1318,7 @@ a:hover {
   font-family: Verdana, 'Trebuchet MS', serif;
   font-weight: bold;
   font-size: 10pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -1244,9 +1333,9 @@ a:hover {
   padding: 20px 0 10px 0;
   position: relative;
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .d-block-card-inner-content {
@@ -1257,12 +1346,12 @@ a:hover {
 
 .d-block-card-bold-content {
   font-weight: normal;
-  color: #fff;
+  color: var(--text-accent);
   min-height: 55px;
   background: #141414;
   border:1px solid #141414;
   border-radius: 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
   text-align: justify;
   padding: 10px;
   cursor: default;
@@ -1295,9 +1384,9 @@ a:hover {
   height:30px;
   float:left;
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .p-block-header h4 {
@@ -1306,7 +1395,7 @@ a:hover {
   font-family: Verdana, 'Trebuchet MS', serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -1318,10 +1407,10 @@ a:hover {
   height:100%;
   padding: 10px 0 10px 0;
   position: relative;
-  background: #222222;
-  border: 1px solid #3d3d3d;
+  background: var(--box-block-accent);
+  border: 1px solid var(--border-accent);
   border-radius: 8px 8px 8px 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .p-block-inner-content {
@@ -1335,11 +1424,11 @@ a:hover {
   justify-items: center;
   align-items: center;
   font-weight: normal;
-  color: #fff;
-  background: #141414;
-  border:1px solid #141414;
+  color: var(--text-accent);
+  background: var(--background);
+  border:1px solid var(--background);
   border-radius: 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
   text-align: justify;
   padding: 10px;
   cursor: default;
@@ -1351,11 +1440,11 @@ a:hover {
   align-items: center;
   justify-items: center;
   width: 258px;
-  border-right: 2px solid #363738;
+  border-right: 2px solid var(--box-border-accent);
 }
 
 .p-block-platform h2 {
-  color: #fff;
+  color: var(--text-accent);
   font-size: 11pt;
   font-weight: normal;
   text-shadow: 0 0 0 #3d3d3d;
@@ -1364,10 +1453,14 @@ a:hover {
 }
 
 .p-block-platform p {
-  color: #fff;
+  color: var(--text-accent);
   text-shadow: 0 0 0 #3d3d3d;
   padding: 0;
   margin: 2px 0 0;
+}
+
+.p-block-platform svg {
+  fill: var(--text-accent) !important;
 }
 
 .c-block {
@@ -1382,9 +1475,9 @@ a:hover {
   height:30px;
   float:left;
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .c-block-header h4 {
@@ -1393,7 +1486,7 @@ a:hover {
   font-family: Verdana, 'Trebuchet MS', serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -1405,10 +1498,10 @@ a:hover {
   height:100%;
   padding: 10px 0 10px 0;
   position: relative;
-  background: #222222;
-  border: 1px solid #3d3d3d;
+  background: var(--box-block-accent);
+  border: 1px solid var(--border-accent);
   border-radius: 8px 8px 8px 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .c-block-inner-content {
@@ -1418,11 +1511,11 @@ a:hover {
 
 .c-block-bold-content {
   font-weight: normal;
-  color: #fff;
-  background: #141414;
-  border:1px solid #141414;
+  color: var(--text-accent);
+  background: var(--background);
+  border:1px solid var(--background);
   border-radius: 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
   text-align: justify;
   padding: 10px;
   cursor: default;
@@ -1441,9 +1534,9 @@ a:hover {
   height:30px;
   float:left;
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .d-block-header h4 {
@@ -1452,7 +1545,7 @@ a:hover {
   font-family: Verdana, 'Trebuchet MS', serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -1466,9 +1559,9 @@ a:hover {
   padding: 20px 0 10px 0;
   position: relative;
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .d-block-inner-content {
@@ -1480,12 +1573,12 @@ a:hover {
   display: flex;
   flex-direction: row;
   font-weight: normal;
-  color: #fff;
+  color: var(--text-accent);
   min-height: 419px;
   background: #141414;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
   text-align: justify;
   padding: 5px 10px 5px 10px;
   cursor: default;
@@ -1503,9 +1596,9 @@ a:hover {
 
 .products-list-header {
   background: transparent;
-  border-bottom: 2px solid #3d3d3d;
+  border-bottom: 2px solid var(--border-accent);
   border-radius: 0;
-  box-shadow: 0 1px 0 0 #363738;
+  box-shadow: 0 1px 0 0 var(--box-border-accent);
   display: flex;
   flex-direction: row;
   height: 35px;
@@ -1520,7 +1613,7 @@ a:hover {
   font-family:  Verdana, 'Trebuchet MS', serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -1529,9 +1622,9 @@ a:hover {
 
 .products-list-footer {
   background: transparent;
-  border-top: 2px solid #3d3d3d;
+  border-top: 2px solid var(--border-accent);
   border-radius: 0;
-  box-shadow: 0 1px 0 0 #363738;
+  box-shadow: 0 1px 0 0 var(--box-border-accent);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1549,7 +1642,7 @@ a:hover {
   font-family: 'Trebuchet MS', serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -1564,16 +1657,16 @@ a:hover {
   padding-left: 10px;
   display: none;
   flex-direction: column;
-  border-left: 2px solid #3d3d3d;
-  box-shadow: -2px 0 1px -2px #363738;
+  border-left: 2px solid var(--border-accent);
+  box-shadow: -2px 0 1px -2px var(--box-border-accent);
 }
 
 .activity-feed-header {
   width: 100%;
   background: transparent;
-  border-bottom: 2px solid #3d3d3d;
+  border-bottom: 2px solid var(--border-accent);
   border-radius: 0;
-  box-shadow: 0 1px 0 0 #363738;
+  box-shadow: 0 1px 0 0 var(--box-border-accent);
   display: flex;
   flex-direction: row;
   height: 35px;
@@ -1587,7 +1680,7 @@ a:hover {
   font-family: Verdana, 'Trebuchet MS', serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -1669,9 +1762,9 @@ a:hover {
   color: #000000;
   font-size:10px;
   background: #141414;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .search-categories-container {
@@ -1681,7 +1774,7 @@ a:hover {
   align-items: center;
   padding: 2px;
   font-weight: bold;
-  color: #fff;
+  color: var(--text-accent);
 }
 
 .categories-products-bar {
@@ -1692,9 +1785,9 @@ a:hover {
   color: #000000;
   font-size:10px;
   background: #141414;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
 }
 
 .products-categories-container {
@@ -1704,7 +1797,7 @@ a:hover {
   align-items: center;
   padding: 2px;
   font-weight: bold;
-  color: #fff;
+  color: var(--text-accent);
 }
 
 .products-header-content-link {
@@ -1750,9 +1843,9 @@ a:hover {
 
 .search-products-input-container {
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 8px;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
   display: flex;
   flex: 2;
   height: 100%;
@@ -1763,7 +1856,7 @@ a:hover {
 
 .search-products-field {
   background: transparent;
-  color: #fff;
+  color: var(--text-accent);
   position: relative;
   left: 20px;
   width: 245px;
@@ -1777,7 +1870,7 @@ a:hover {
   border: none;
   outline: none;
   background: transparent;
-  color: #fff;
+  color: var(--text-accent);
 }
 
 .search-products-filter {
@@ -1789,8 +1882,8 @@ a:hover {
   background: #222222;
   padding-top: 5px;
   padding-bottom: 5px;
-  border-top: 2px solid #3d3d3d;
-  border-bottom: 2px solid #3d3d3d;
+  border-top: 2px solid var(--border-accent);
+  border-bottom: 2px solid var(--border-accent);
   width: 100%;
   height: 80px;
   bottom: 5px;
@@ -1803,7 +1896,7 @@ a:hover {
   padding-bottom: 10px;
   position: relative;
   overflow: hidden;
-  color: #FFFFFF;
+  color: var(--text-accent);
 }
 
 .m-block {
@@ -1825,9 +1918,9 @@ a:hover {
   margin-bottom: 5px;
   line-height: 0;
   background: transparent;
-  border: 0 solid #3d3d3d;
+  border: 0 solid var(--border-accent);
   border-radius: 0;
-  box-shadow: 0 0 0 0 #363738;
+  box-shadow: 0 0 0 0 var(--box-border-accent);
 }
 
 .m-block-header h4 {
@@ -1836,7 +1929,7 @@ a:hover {
   font-family: Verdana, 'Trebuchet MS', serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -1861,11 +1954,11 @@ a:hover {
 .motivation-inner-content {
   width: 980px;
   margin: 0 auto;
-  border-top: 0 solid #3d3d3d;
+  border-top: 0 solid var(--border-accent);
   padding-bottom: 10px;
   position: relative;
   overflow: hidden;
-  color: #FFFFFF;
+  color: var(--text-accent);
 }
 
 .motivation-block-header {
@@ -1878,7 +1971,7 @@ a:hover {
 }
 
 .motivation-block-header p {
-  color: #fff;
+  color: var(--text-accent);
   text-shadow: 0 0 0 #3d3d3d;
   font-size: 12px;
   padding: 0;
@@ -1900,11 +1993,11 @@ a:hover {
 }
 
 .rating {
-  background: #222222;
+  background: var(--rating-accent);
   padding-top: 15px;
   padding-bottom: 25px;
-  border-top: 1px solid #3d3d3d;
-  border-bottom: 1px solid #3d3d3d;
+  border-top: 1px solid var(--border-accent);
+  border-bottom: 1px solid var(--border-accent);
   width: 100%;
   height: 80px;
   bottom: 5px;
@@ -1917,7 +2010,7 @@ a:hover {
   padding-bottom: 10px;
   position: relative;
   overflow: hidden;
-  color: #FFFFFF;
+  color: var(--text-accent);
 }
 
 .rating-stars-container {
@@ -1980,9 +2073,9 @@ a:hover {
   margin-bottom: 5px;
   line-height: 0;
   background: transparent;
-  border: 0 solid #3d3d3d;
+  border: 0 solid var(--border-accent);
   border-radius: 0;
-  box-shadow: 0 0 0 0 #363738;
+  box-shadow: 0 0 0 0 var(--box-border-accent);
 }
 
 .r-block-header h4 {
@@ -1991,7 +2084,7 @@ a:hover {
   font-family: Verdana, 'Trebuchet MS', serif;
   font-weight: bold;
   font-size: 11pt;
-  color: #fff;
+  color: var(--text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
@@ -2009,9 +2102,9 @@ a:hover {
   flex-direction: row;
   position: relative;
   background: transparent;
-  border: 0 solid #3d3d3d;
+  border: 0 solid var(--border-accent);
   border-radius: 0;
-  box-shadow: 0 0 0 0 #363738;
+  box-shadow: 0 0 0 0 var(--box-border-accent);
 }
 
 .rating-control {
@@ -2046,6 +2139,28 @@ a:hover {
   background-position: center center;
 }
 
+.theme-toggle-widget-dark-mode {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-image: var(--dark-mode-base64);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-color: #fff0;
+  background-position: center center;
+}
+
+.theme-toggle-widget-light-mode {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-image: var(--light-mode-base64);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-color: #fff0;
+  background-position: center center;
+}
+
 .feedback-link:hover > h4 {
   text-decoration: underline;
 }
@@ -2063,11 +2178,11 @@ a:hover {
 .footer-inner-content {
   width: 980px;
   margin: 0 auto;
-  border-top: 0 solid #3d3d3d;
+  border-top: 0 solid var(--border-accent);
   padding-bottom: 10px;
   position: relative;
   overflow: hidden;
-  color: #FFFFFF;
+  color: var(--text-accent);
 }
 
 .box-footer {
@@ -2081,7 +2196,7 @@ a:hover {
 .footer-inner-content h2 {
   padding-bottom: 4px;
   margin-bottom: 14px;
-  color: #FFFFFF;
+  color: var(--text-accent);
   font-size: 15px;
   border-bottom: 0 solid #FFFFFF;
 }
@@ -2094,7 +2209,7 @@ a:hover {
 }
 
 .copyright {
-  background: #141414;
+  background: var(--background);
   width: 100%;
   height: 55px;
   min-width: 1050px;
@@ -2105,11 +2220,11 @@ a:hover {
 .copyright-inner-content {
   display: flex;
   flex-direction: row;
-  border-top: 0 solid #3d3d3d;
+  border-top: 0 solid var(--border-accent);
   width:980px;
   margin:0 auto;
   font-size:7pt;
-  color:#fff;
+  color: var(--text-accent);
   padding:15px 0;
   position:relative;
   cursor: default;
@@ -2140,7 +2255,7 @@ a:hover {
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
-  border-bottom: 2px solid #3d3d3d;
+  border-bottom: 2px solid var(--border-accent);
 }
 
 .list-item-bullet-container {
@@ -2177,9 +2292,9 @@ a:hover {
 
 .products-table-header {
   background: #222222;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--border-accent);
   border-radius: 0;
-  box-shadow: 0 0 0 1px #363738;
+  box-shadow: 0 0 0 1px var(--box-border-accent);
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -2197,7 +2312,7 @@ a:hover {
 
 .products-column-head {
   font-weight: bold;
-  color: #fff;
+  color: var(--text-accent);
   background: transparent;
   border: none;
   float: left;
@@ -2211,9 +2326,9 @@ a:hover {
   width: 100%;
   min-height: 45px;
   max-height: 45px;
-  border-bottom: 1px solid #3d3d3d;
+  border-bottom: 1px solid var(--border-accent);
   border-radius: 0;
-  box-shadow: 0 1px 0 0 #363738;
+  box-shadow: 0 1px 0 0 var(--box-border-accent);
 }
 
 .products-table-cell {
@@ -2250,5 +2365,5 @@ font.gray { color: #ACA899; text-decoration: underline; }
 .navigation-list-container ul li.active, .navigation-list-container ul li a:hover, .navigation-list-container ul li.active a { text-decoration:none; color:#b7b7b7; }
 .navigation-list-container ul li.active, .navigation-list-container ul li a:hover, .navigation-list-container ul li.active a { text-decoration:none; color:#b7b7b7; }
 
-a:link, a:visited { text-decoration: none; color: #fff; }
-a:hover { color: #fff; }
+a:link, a:visited { text-decoration: none; color: var(--text-accent); }
+a:hover { color: var(--text-accent); }
