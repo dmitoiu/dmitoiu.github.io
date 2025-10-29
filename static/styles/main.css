@@ -2,6 +2,8 @@
   --background: #141414;
   --header: #222222;
   --primary-accent: #333333;
+  --main-header-accent: #333333;
+  --navigation-accent: #333333;
   --text-accent: #ffffff;
   --widgets-accent: #e1e1e1;
   --border-accent: #3d3d3d;
@@ -51,6 +53,8 @@
   --background: #e1e1e1;
   --header: #f4f4f4;
   --primary-accent: #dddddd;
+  --main-header-accent: #f4f4f4;
+  --navigation-accent: #dddddd;
   --text-accent: #141414;
   --widgets-accent: #141414;
   --border-accent: #3d3d3d;
@@ -140,7 +144,7 @@ html, body {
 .main-banner {
   width: 100%;
   min-width: 1050px;
-  background-color: var(--primary-accent);
+  background-color: var(--main-header-accent);
   border-bottom: 1px solid var(--box-border-accent);
   color: var(--text-accent);
   font-family: Segoe UI, serif;
@@ -578,7 +582,7 @@ html, body {
   margin: 0 0;
   font-family:Helvetica,Arial,Verdana,sans-serif;
   /* CSS Nav */
-  background: var(--primary-accent);
+  background: var(--navigation-accent);
   border: 1px solid var(--border-accent);
   border-radius: 8px;
   box-shadow: 0 0 5px 1px var(--box-border-accent);
