@@ -11,6 +11,7 @@
   --sub-content-link-hover: #363738;
   --arrow-down-background: #e1e1e1;
   --close-widget: #c8c8c8;
+  --close-widget-hover: #aaa;
   --rating-accent: #222222;
   --white: #d7dedc;
   --black: #15181e;
@@ -50,7 +51,7 @@
   --background: #e1e1e1;
   --header: #f4f4f4;
   --primary-accent: #dddddd;
-  --text-accent: #000000;
+  --text-accent: #141414;
   --widgets-accent: #141414;
   --border-accent: #3d3d3d;
   --box-block-accent: #f4f4f4;
@@ -58,8 +59,9 @@
   --box-shadow-accent: #222222;
   --sub-content-link-hover: #f4f4f4;
   --arrow-down-background: #141414;
-  --close-widget: #c8c8c8;
-  --rating-accent: #f4f4f4;
+  --close-widget: #515151;
+  --close-widget-hover: #363738;
+  --rating-accent: #535353;
   --box-shadow: #363738;
   --white: #d7dedc;
   --black: #15181e;
@@ -416,7 +418,12 @@ html, body {
 }
 
 .banner-details > .banner-close-details:hover {
-  color: #aaa;
+  color: var(--close-widget);
+  cursor: pointer;
+}
+
+.banner-details > .banner-close-details:hover {
+  color: var(--close-widget-hover);
   cursor: pointer;
 }
 
