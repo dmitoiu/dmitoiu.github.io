@@ -5,6 +5,7 @@
   --main-header-accent: #333333;
   --navigation-accent: #333333;
   --text-accent: #ffffff;
+  --navigation-text-accent: #ffffff;
   --widgets-accent: #e1e1e1;
   --border-accent: #3d3d3d;
   --box-block-accent: #222222;
@@ -56,6 +57,7 @@
   --main-header-accent: #f4f4f4;
   --navigation-accent: #dddddd;
   --text-accent: #121212;
+  --navigation-text-accent: #1f1f1f;
   --widgets-accent: #141414;
   --border-accent: #3d3d3d;
   --box-block-accent: #f4f4f4;
@@ -1940,7 +1942,7 @@ a:hover {
   font-family: Verdana, 'Trebuchet MS', serif;
   font-weight: bold;
   font-size: 11pt;
-  color: var(--text-accent);
+  color: var(--navigation-text-accent);
   float: left;
   text-shadow: 0 0 0 #3d3d3d;
   padding-top: 0;
