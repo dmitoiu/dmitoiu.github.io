@@ -171,7 +171,7 @@ html, body {
 }
 
 .sub-banner-content > label:before {
-  background-image: url(../images/europa.svg);
+  background-image: url(../media/europa.svg);
   background-repeat: no-repeat;
   background-size: 24px 16px;
   content: "";
